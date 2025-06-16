@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to the Signal</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #f2f1e9 url('paper-texture.png') repeat;
+      color: #111;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 2rem 1rem;
+      text-align: center;
+      background-color: #111;
+      color: #f2f1e9;
+      border-bottom: 3px dashed #f2f1e9;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      text-shadow: 1px 1px #c00;
+    }
+
+    nav {
+      background: #ddd;
+      padding: 0.5rem;
+      text-align: center;
+      border-bottom: 1px dashed #000;
+    }
+
+    nav a {
+      color: #000;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+      text-shadow: 1px 1px #aaa;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    .quote {
+      font-style: italic;
+      border-left: 5px solid #c00;
+      padding-left: 1rem;
+      margin: 2rem 0;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #666;
+      margin: 4rem 0 1rem;
+    }
+
+    .glitch {
+      display: inline-block;
+      position: relative;
+    }
+
+    .glitch::after {
+      content: attr(data-text);
+      position: absolute;
+      left: 2px;
+      top: 0;
+      color: #f00;
+      clip: rect(0, 900px, 0, 0);
+      animation: glitch 1s infinite linear alternate-reverse;
+    }
+
+    @keyframes glitch {
+      0% { clip: rect(0, 999px, 0, 0); }
+      20% { clip: rect(10px, 999px, 20px, 0); }
+      40% { clip: rect(20px, 999px, 30px, 0); }
+      60% { clip: rect(5px, 999px, 15px, 0); }
+      80% { clip: rect(15px, 999px, 25px, 0); }
+      100% { clip: rect(0, 999px, 10px, 0); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1><span class="glitch" data-text="ExploitLog">ExploitLog</span></h1>
+    <p>Your node on the fringe.</p>
+  </header>
+
+  <nav>
+    <a href="/manifesto">Manifesto</a>
+    <a href="/exploitlog">Exploit Log</a>
+    <a href="/scripts">Scripts</a>
+    <a href="/writings">Writings</a>
+    <a href="/links">Links</a>
+  </nav>
+
+  <main>
+    <p>This site is not for show. It is a repository of signals, scripts, thoughts, and counter-structures. Think of it as a zine on the mesh network, a digital pamphlet run through a typewriter and doused in coffee stains.</p>
+
+    <div class="quote">
+      “Hackers are not criminals. They are the last true explorers in a world that has lost its edge.”
+    </div>
+
+    <p>If you're looking for something glossy, something corporately blessed, you're in the wrong place. If you're here to learn, build, and rebel — welcome home.</p>
+  </main>
+
+  <footer>
+    <p>Built by hand with HTML. No frameworks. No tracking. <br> View source. Fork. Mirror. Escape the monoculture.</p>
+  </footer>
+</body>
+</html>

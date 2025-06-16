@@ -1,0 +1,128 @@
+<!-- HTML document for craine.land -->
+<!-- Version 3.0 -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>craine.land</title>
+    <link rel="icon" href="img/logo-symbol.png" type="image/png">
+    <link rel="stylesheet" href="static/style.css">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;1,200;1,500&family=VT323&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <a href="files/craine.land_resume_2025.pdf" target="_blank" class="corner-resume-link">résumé</a>
+    <button id="toggle-background" style="
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+        z-index: 1000;
+        background: #111;
+        color: #fff;
+        border: 1px solid #888;
+        padding: 0.5em 1em;
+        font-family: 'VT323', monospace;
+        cursor: pointer;
+    ">
+        toggle background
+    </button>
+    <div class="grain">
+        <div class="page-wrap">
+            <header>
+                <h1><a href="index.html">craine.land</a></h1>
+                <nav>
+                    <a href="projects.html">
+                        <span class="glitch" data-text="projects.html">projects</span>
+                    </a>
+                    <a href="exploitlog.html">
+                        <span class="glitch" data-text="exploitlog.html">exploitlog</span>
+                    </a>
+                    <a href="contact.html">
+                        <span class="glitch" data-text="contact.html">contact</span>
+                    </a>
+                </nav>
+            </header>
+
+
+            <main>
+                <section class="intro">
+                    <p><strong>Howdy, I'm Camden.</strong><br>I'm currently employed as a backend-focused DevOps
+                        engineer with a knack for automation, monitoring,
+                        data analytics, and practical security.</p>
+                </section>
+
+                <section class="section-blurb">
+                    <h2>↯ currents ↯</h2>
+                    <ul>
+                        <li>creating shareholder value @ accenture</li>
+                        <li>
+                            maintaining cloud-native GCP + kubernetes infrastructure as a splunk/code monkey @
+                            <span class="redacted-bar" title="REDACTED due to NDA"></span>
+                        </li>
+                        <li>building <code>rock-table-fire</code> -- a comms platform for monthly men's fires</li>
+                        <li>writing a psychological horror short film on akrasia and hedonism</li>
+                    </ul>
+                </section>
+
+                <section class="section-blurb">
+                    <h2>☍ technicalities ☍</h2>
+                    <ul>
+                        <li>java, c, splunk, python, kubernetes, elasticsearch, unix-like things</li>
+                        <li>low-bloat design, practical security, weird scripts</li>
+                        <li>distributed systems, clean code, optimized processes</li>
+                        <li>log analysis, observability engineering, data insights, secure coding</li>
+                        <li>minimalist software, performance-minded design, data privacy</li>
+                        <li>philosophy of suffering, existential risk, cybernetics, aesthetics</li>
+                    </ul>
+                </section>
+
+                <section class="section-blurb">
+                    <h2>⏲ histories ⏲</h2>
+                    <ul>
+                        <li>bs in computational modeling & data analytics @ virginia tech</li>
+                        <li>ba in philosophy @ virginia tech</li>
+                        <li>bfa in dropping out of film school @ VCUarts</li>
+                    </ul>
+                </section>
+
+                <section class="ascii-endcap">
+                    <pre>
+   ╭────────────────────────────────────╮
+   │   there is no cloud, only          │
+   │   other people's root accounts     │
+   ╰────────────────────────────────────╯
+        </pre>
+                </section>
+            </main>
+
+            <footer>
+                <p><a href="https://www.craine.land">www.craine.land</a> — est. 2022</p>
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        const toggleBtn = document.getElementById('toggle-background');
+        const body = document.body;
+
+        // Apply stored preference on page load
+        if (localStorage.getItem('grainDisabled') === 'true') {
+            body.classList.add('no-grain');
+        }
+
+        // Toggle and store preference
+        toggleBtn.addEventListener('click', () => {
+            body.classList.toggle('no-grain');
+            const isDisabled = body.classList.contains('no-grain');
+            localStorage.setItem('grainDisabled', isDisabled);
+        });
+    </script>
+</body>
+
+</html>

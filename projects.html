@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Projects — craine.land</title>
+    <link rel="stylesheet" href="static/style.css">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;1,200;1,500&family=VT323&display=swap"
+        rel="stylesheet">
+</head>
+
+
+<body>
+    <a href="files/craine.land_resume_2025.pdf" target="_blank" class="corner-resume-link">résumé</a>
+    <button id="toggle-background" style="
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+        z-index: 1000;
+        background: #111;
+        color: #fff;
+        border: 1px solid #888;
+        padding: 0.5em 1em;
+        font-family: 'VT323', monospace;
+        cursor: pointer;
+    ">
+        toggle background
+    </button>
+    <div class="grain">
+        <div class="page-wrap">
+            <header>
+                <h1><a href="index.html">craine.land</a></h1>
+                <nav>
+                    <a href="projects.html"><span class="glitch" data-text="projects.html">projects</span></a>
+                    <a href="exploitlog.html"><span class="glitch" data-text="exploitlog.html">exploitlog</span></a>
+                    <a href="contact.html"><span class="glitch" data-text="contact.html">contact</span></a>
+                </nav>
+            </header>
+
+            <main>
+                <section class="section-blurb">
+                    <h2>professional</h2>
+
+                    <div class="project">
+                        <h3><code>data-sync-checker</code></h3>
+                        <p>Python script suite comparing Elasticsearch and Oracle data for production integrity checks
+                            across a telecom retail platform. Built and deployed internally at Accenture.</p>
+                    </div>
+
+                    <div class="project">
+                        <h3><code>splunk-kube-log-forwarder</code></h3>
+                        <p>Go-based daemon that monitors Kubernetes pod logs and pushes critical patterns (OOMKills,
+                            panics, 5xx) directly to Splunk. Improves observability with low overhead.</p>
+                    </div>
+                </section>
+
+                <section class="section-blurb">
+                    <h2>academic</h2>
+
+                    <div class="project">
+                        <h3><code><a href="https://github.com/craineland/AES_Image_Encryption_with_CUDA">aes-image-encryption-with-cuda</a></code>
+                        </h3>
+                        <p>Cuda C implementation of AES for image encryption; part of a senior scaled computing research project.</p>
+                    </div>
+
+                    <div class="project">
+                        <h3><code>subsurface-modeling</code></h3>
+                        <p>Python math modeling suite to support explosive detection research via GPR data. Built during
+                            research term with U.S. Army DEVCOM C5ISR Center.</p>
+                    </div>
+                </section>
+
+                <section class="section-blurb">
+                    <h2>personal</h2>
+
+                    <div class="project">
+                        <h3><code>rocktablefire</code></h3>
+                        <p>Minimalist RSVP/comms platform for monthly community gatherings. Built with FastAPI,
+                            SQLAlchemy, and Gmail/Twilio APIs. Custom token-based flows for secure event invites.</p>
+                    </div>
+                </section>
+
+                <section class="ascii-endcap">
+                    <pre>
+   ╭────────────────────────────────────────────╮
+   │   some of the code was useful,             │
+   │   some of it was cursed                    │
+   ╰────────────────────────────────────────────╯
+          </pre>
+                </section>
+            </main>
+
+            <footer>
+                <p><a href="https://www.craine.land">www.craine.land</a> — est. 2022</p>
+            </footer>
+        </div>
+    </div>
+    <script>
+        const toggleBtn = document.getElementById('toggle-background');
+        const body = document.body;
+
+        // Apply stored preference on page load
+        if (localStorage.getItem('grainDisabled') === 'true') {
+            body.classList.add('no-grain');
+        }
+
+        // Toggle and store preference
+        toggleBtn.addEventListener('click', () => {
+            body.classList.toggle('no-grain');
+            const isDisabled = body.classList.contains('no-grain');
+            localStorage.setItem('grainDisabled', isDisabled);
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>contact — craine.land</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;1,200;1,500&family=VT323&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <a href="files/craine.land_resume_2025.pdf" target="_blank" class="corner-resume-link">résumé</a>
+
+    <button id="toggle-background" style="
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1000;
+    background: #111111;
+    color: #fff;
+    border: 1px solid #888;
+    padding: 0.5em 1em;
+    font-family: 'VT323', monospace;
+    cursor: pointer;">
+        toggle background
+    </button>
+
+    <div class="grain">
+        <div class="page-wrap">
+            <header>
+                <h1><a href="index.html">craine.land</a></h1>
+                <nav>
+                    <a href="projects.html"><span class="glitch" data-text="projects.html">projects</span></a>
+                    <a href="exploitlog.html"><span class="glitch" data-text="exploitlog.html">exploitlog</span></a>
+                    <a href="contact.html"><span class="glitch" data-text="contact.html">contact</span></a>
+                </nav>
+            </header>
+
+            <main>
+                <section class="section-blurb">
+                    <h2>contact terminal</h2>
+
+                    <p><strong>github</strong>: <a href="https://github.com/craineland" target="_blank" class="glitch" data-text="craineland">craineland</a></p>
+
+                    <p><strong>email</strong>: <span id="email-link" class="glitch" data-text="[ click to reveal ]" style="cursor: pointer; font-style: italic; color: #888;" onclick="revealEmail()">[ click to reveal ]</span></p>
+                </section>
+
+                <section class="ascii-endcap">
+                    <pre>
+╭───────────────────────────────────────╮
+│  don't be a stranger.                 │
+│  unless you're a bot.                 │
+╰───────────────────────────────────────╯
+          </pre>
+                </section>
+            </main>
+
+            <footer>
+                <p><a href="https://www.craine.land">www.craine.land</a> — est. 2022</p>
+            </footer>
+            <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+        </div>
+    </div>
+
+    <script>
+        const toggleBtn = document.getElementById('toggle-background');
+        const body = document.body;
+
+        // Apply stored preference on page load
+        if (localStorage.getItem('grainDisabled') === 'true') {
+            body.classList.add('no-grain');
+        }
+
+        // Toggle and store preference
+        toggleBtn.addEventListener('click', () => {
+            body.classList.toggle('no-grain');
+            const isDisabled = body.classList.contains('no-grain');
+            localStorage.setItem('grainDisabled', isDisabled);
+        });
+
+        // Email reveal logic
+        function revealEmail() {
+            const emailSpan = document.getElementById('email-link');
+            emailSpan.innerText = 'craine@disroot.org';
+            emailSpan.classList.add('revealed');
+        }
+    </script>
+</body>
+
+</html>
